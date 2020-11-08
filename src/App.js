@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import React, {useState} from "react";
 import './App.css';
+import Navbar from './Navbar';
+import Footer from './Footer'
+import './Navbar.css';
+import LandingPage from './LandingPage';
+import ImageForm from './ImageForm';
+import Tshirt from './Tshirt';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      
+      <BrowserRouter>
+        <div>
+          <Navbar/>
+          <switch>
+            <Route path="/" exact component={LandingPage}/>
+            <Route path="/imageform" exact component={ImageForm}/>
+            <Route path="/tshirt" exact component={Tshirt}/>
+          </switch>
+          <br/><br/><br/><br/>
+
+          <Footer/>
+        
+        </div>
+      </BrowserRouter>
   );
 }
 
