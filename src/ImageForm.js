@@ -6,7 +6,7 @@ export default function ImageForm(){
      
       const [images, setImages] = useState([]);
       
-      
+
       const imageHandler = e => {
           //console.log(e.target.files);
           if(e.target.files){
@@ -25,12 +25,12 @@ export default function ImageForm(){
 
       const renderImage = (source) => {
           return source.map((photo,index) => {
-              return <div class="card mr-4">
+              return <div className="card ml-4 mt-4">
                         <div className="card-img-top">
                             <img src={photo} key={photo}/>
                         </div>
-                        <div class="card-footer text-center">
-                            <button onClick={() => removeImage(index)}>Remove</button>
+                        <div className="card-footer text-center">
+                            <button className="btn btn-danger" onClick={() => removeImage(index)}>Remove</button>
                         </div>
                     </div>
           });
@@ -47,10 +47,11 @@ export default function ImageForm(){
                         <i className="material-icons">add_a_photo</i>
                     </label>
                 </div>
-                <div className="result container mt-4">
+                <div className="result  mt-4">
                     {renderImage(images)}
                 </div>
             </div>
+            <br/><br/><br/><br/><br/><br/>
         </div>
       );
 }
